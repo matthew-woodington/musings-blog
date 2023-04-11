@@ -2,30 +2,29 @@ import groq from "groq"
 import client from "../../client"
 import imageUrlBuilder from "@sanity/image-url"
 import { PortableText } from "@portabletext/react"
-import { format } from "path"
 
 function urlFor (source:any) {
   return imageUrlBuilder(client).image(source)
 }
 
-const ptComponents = {
-  types: {
-    image: ({ value } : {value:any}) => {
-      if (!value?.asset?._ref) {
-        return null
-      }
-      return (
-        <picture>
-          <img
-            alt={value.alt || ' '}
-            loading="lazy"
-            src={urlFor(value).width(320).height(240).fit('max').auto('format')}
-          />
-        </picture>
-      )
-    }
-  }
-}
+// const ptComponents = {
+//   types: {
+//     image: ({ value } : {value:any}) => {
+//       if (!value?.asset?._ref) {
+//         return null
+//       }
+//       return (
+//         <picture>
+//           <img
+//             alt={value.alt || ' '}
+//             loading="lazy"
+//             src={urlFor(value).width(320).height(240).fit('max').auto('format')}
+//           />
+//         </picture>
+//       )
+//     }
+//   }
+// }
 
 const Post = ({post} : {post:any}) => {
 
@@ -56,14 +55,16 @@ const Post = ({post} : {post:any}) => {
         </picture>
       )}
       <PortableText 
-        value={body}
-        components={ptComponents}
+        value={body[0]}
       />
       {mainImage && (
         <picture>
-          <img src={urlFor(mainImage).width(50).url()} alt={`${name}'s picture`} />
+          <img src={urlFor(mainImage).width(320).url()} alt={`${title} picture`} />
         </picture>
       )}
+      <PortableText 
+        value={body.slice(1)}
+      />
     </article>
   )
 }
