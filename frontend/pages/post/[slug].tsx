@@ -4,7 +4,7 @@ import imageUrlBuilder from "@sanity/image-url"
 import { PortableText } from "@portabletext/react"
 import { format } from "path"
 
-function urlFor (source:string) {
+function urlFor (source:any) {
   return imageUrlBuilder(client).image(source)
 }
 
@@ -29,11 +29,14 @@ const ptComponents = {
 
 const Post = ({post} : {post:any}) => {
 
+  console.log(post.body)
+
   const { 
     title = 'Missing title', 
     name = 'Missing name', 
     categories, 
     authorImage,
+    mainImage,
     body = []
   } = post
 
@@ -56,6 +59,11 @@ const Post = ({post} : {post:any}) => {
         value={body}
         components={ptComponents}
       />
+      {mainImage && (
+        <picture>
+          <img src={urlFor(mainImage).width(50).url()} alt={`${name}'s picture`} />
+        </picture>
+      )}
     </article>
   )
 }
@@ -65,6 +73,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
+  "mainImage": mainImage,
   body
 }`
 
