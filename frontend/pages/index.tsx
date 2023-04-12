@@ -5,7 +5,11 @@ import Link from "next/link"
 import groq from "groq"
 import client from "../client"
 
-const Home = ({ posts } : {posts:any}) => {
+const Home = ({ featuredPost, posts } : {featuredPost:any, posts:any}) => {
+
+  console.log(featuredPost)
+  console.log(posts)
+
   return (
     <div>
       <h1>Welcome to the Blog!</h1>
@@ -24,12 +28,16 @@ const Home = ({ posts } : {posts:any}) => {
   )
 }
 
+const featuredQuery = groq`*[_type == "post" && 'Featured' in categories[]->title]`
+const postsQuery = groq`*[_type == "post" && publishedAt < now() && 'Standard' in categories[]->title] | order(publishedAt desc)`
+
 export async function getStaticProps() {
-  const posts = await client.fetch(groq`
-    *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
-  `)
+  const featuredPost = await client.fetch(featuredQuery)
+  const posts = await client.fetch(postsQuery)
+
   return {
     props: {
+      featuredPost,
       posts
     }
   }
