@@ -2,6 +2,7 @@ import groq from "groq"
 import client from "../../client"
 import imageUrlBuilder from "@sanity/image-url"
 import { PortableText } from "@portabletext/react"
+import BlogPost from "@/components/blogpost"
 
 function urlFor (source:any) {
   return imageUrlBuilder(client).image(source)
@@ -28,44 +29,8 @@ function urlFor (source:any) {
 
 const Post = ({post} : {post:any}) => {
 
-  console.log(post.body)
-
-  const { 
-    title = 'Missing title', 
-    name = 'Missing name', 
-    categories, 
-    authorImage,
-    mainImage,
-    body = []
-  } = post
-
   return (
-    <article>
-      <h1>{title}</h1>
-      <span>By {name}</span>
-      {categories && (
-        <ul>
-          Posted in:
-          {categories.map((category:string) => <li key={category}>{category}</li>)}
-        </ul>
-      )}
-      {authorImage && (
-        <picture>
-          <img src={urlFor(authorImage).width(50).url()} alt={`${name}'s picture`} />
-        </picture>
-      )}
-      <PortableText 
-        value={body[0]}
-      />
-      {mainImage && (
-        <picture>
-          <img src={urlFor(mainImage).width(320).url()} alt={`${title} picture`} />
-        </picture>
-      )}
-      <PortableText 
-        value={body.slice(1)}
-      />
-    </article>
+    <BlogPost post={post} />
   )
 }
 
@@ -75,6 +40,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "categories": categories[]->title,
   "authorImage": author->image,
   "mainImage": mainImage,
+  "publishedAt": publishedAt,
   body
 }`
 
