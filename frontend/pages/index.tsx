@@ -1,40 +1,28 @@
-// import { Inter } from 'next/font/google'
-// import styles from '@/styles/Home.module.css'
-
-import Link from "next/link"
 import groq from "groq"
 import client from "../client"
-import BlogPost from "@/components/blogpost"
-import { useEffect } from "react"
+import BlogPost from "@/components/BlogPost"
+import { useState } from "react"
+import PostList from "@/components/PostList"
+import Pagination from "@/components/Pagination"
 
-const Home = ({ featuredPost, posts } : {featuredPost:any, posts:any}) => {
+const Home = ({ featuredPost, posts } : { featuredPost:any, posts:any }) => {
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage, setPostsPerPage] = useState(6)
 
-  console.log(featuredPost)
-  console.log(posts)
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
-  // useEffect(() => {
-  //   const getPostList = async () => {
-  //     const 
-  //   }
-  // })
+  const paginate = (pageNumber:number) => setCurrentPage(pageNumber);
 
   return (
     <div>
       <h1>Welcome to the Blog!</h1>
 
       <BlogPost post={featuredPost} />
-
-      {posts.length > 0 && posts.map(
-        ({ _id, title = '', slug = '', publishedAt = '' }:{_id:any, title:string, slug:any, publishedAt:string}) =>
-        slug && (
-          <li key={_id}>
-            <Link href={`/post/${encodeURIComponent(slug.current)}`}>
-              {title}
-            </Link>{' '}
-            ({new Date(publishedAt).toDateString()})
-          </li>
-        )
-      )}
+      <PostList currentPosts={currentPosts} />
+      <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
+      
     </div>
   )
 }
