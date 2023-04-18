@@ -2,7 +2,7 @@ import Link from "next/link"
 
 function PostList({ currentPosts } : { currentPosts:any }) {
   return (
-    <div>
+    <div id="postlist">
       {currentPosts.length > 0 && currentPosts.map(
         ({ _id, title = '', slug = '', publishedAt = '' }:{_id:any, title:string, slug:any, publishedAt:string}) =>
         slug && (

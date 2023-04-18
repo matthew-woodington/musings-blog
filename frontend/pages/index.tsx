@@ -13,13 +13,19 @@ const Home = ({ featuredPost, posts } : { featuredPost:any, posts:any }) => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
-  const paginate = (pageNumber:number) => setCurrentPage(pageNumber);
+  const paginate = (e:any, pageNumber:number) => {
+    e.preventDefault()
+    setCurrentPage(pageNumber)
+  };
 
   return (
     <div>
       <h1>Welcome to the Blog!</h1>
 
-      <BlogPost post={featuredPost} />
+      <section id="featured">
+        <BlogPost post={featuredPost} />
+      </section>
+
       <PostList currentPosts={currentPosts} />
       <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
       
