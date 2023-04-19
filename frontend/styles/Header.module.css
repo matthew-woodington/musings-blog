@@ -1,0 +1,45 @@
+.header {
+  width: 100%;
+  background-color: var(--bgmd);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 100px;
+}
+
+.headertitle {
+  font-family: var(--inter);
+  font-weight: 600;
+  font-size: 36px;
+  text-transform: capitalize;
+  color: var(--white);
+}
+
+.navlist {
+  display: flex;
+  gap: 15px;
+}
+
+.navitem {
+  padding: 5px;
+}
+
+.navlink {
+  font-family: var(--inter);
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.navbutton {
+  font-family: var(--inter);
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--bgdark);
+
+  background-color: var(--accent);
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+

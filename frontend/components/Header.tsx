@@ -1,29 +1,31 @@
+import styles from '../styles/Header.module.css'
+
 function Header() {
   return (
-    <nav>
-      <section className="header-title">
-        <h1>
+    <nav className={styles.header}>
+      <section className={styles.headerhero}>
+        <h1 className={styles.headertitle}>
           Musings from a<br></br>
           Double sided<br></br>
           Couch
         </h1>
       </section>
-      <section className="nav">
-        <ul className="nav-list">
-          <li className="nav-item">
-            <a href="/" className="nav-link">Home</a>
+      <section className={styles.nav}>
+        <ul className={styles.navlist}>
+          <li className={styles.navitem}>
+            <a href="/" className={styles.navlink}>Home</a>
           </li>
-          <li className="nav-item">
-            <a href="/#featured" className="nav-link">Featured</a>
+          <li className={styles.navitem}>
+            <a href="/#featured" className={styles.navlink}>Featured</a>
           </li>
-          <li className="nav-item">
-            <a href="/#about" className="nav-link">About</a>
+          <li className={styles.navitem}>
+            <a href="/#about" className={styles.navlink}>About</a>
           </li>
-          <li className="nav-item">
-            <a href="/#postlist" className="nav-link">Posts</a>
+          <li className={styles.navitem}>
+            <a href="/#postlist" className={styles.navlink}>Posts</a>
           </li>
-          <li className="nav-item">
-            <a href="#" className="nav-button">Reach Out</a>
+          <li className={styles.navitem}>
+            <a href="#" className={styles.navbutton}>Reach Out</a>
           </li>
         </ul>
       </section>

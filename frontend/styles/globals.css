@@ -1,1 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root {
+  --bgdark: #120D21;
+  --bgmd: #82798E;
+  --bglight1: #F3E8F1;
+  --bglight2: #B6C1B4;
+  --accent: #E8C547;
+  --white: #fff;
+
+  --inter: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
