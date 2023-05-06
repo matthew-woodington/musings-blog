@@ -1,0 +1,24 @@
+.herosection {
+  min-height: 80vh;
+  background-color: var(--bgmd);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroimg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+}
+
+.herotitle {
+  z-index: 10;
+  position: relative;
+  font-family: var(--inter);
+  font-weight: 600;
+  font-size: 36px;
+  text-transform: capitalize;
+  color: var(--white);
+  text-align: right;
+}
