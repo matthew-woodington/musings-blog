@@ -7,7 +7,7 @@ function Hero() {
       <picture>
         <img className={styles.heroimg} src={HeroImage.src} alt="couch image" />
       </picture>
-      <div>
+      <div className={styles.herotext}>
         <h1 className={styles.herotitle}>
           Musings from a<br></br>
           Double sided<br></br>

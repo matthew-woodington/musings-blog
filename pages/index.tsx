@@ -4,6 +4,7 @@ import BlogPost from "@/components/BlogPost"
 import { useState } from "react"
 import PostList from "@/components/PostList"
 import Pagination from "@/components/Pagination"
+import Hero from "@/components/Hero"
 
 const Home = ({ featuredPost, posts } : { featuredPost:any, posts:any }) => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -19,8 +20,8 @@ const Home = ({ featuredPost, posts } : { featuredPost:any, posts:any }) => {
   };
 
   return (
-    <div>
-      <h1>Welcome to the Blog!</h1>
+    <>
+      <Hero />
 
       <section id="featured">
         <BlogPost post={featuredPost} />
@@ -29,7 +30,7 @@ const Home = ({ featuredPost, posts } : { featuredPost:any, posts:any }) => {
       <PostList currentPosts={currentPosts} />
       <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
       
-    </div>
+    </>
   )
 }
 

@@ -1,5 +1,5 @@
 .herosection {
-  min-height: 80vh;
+  height: 80vh;
   background-color: var(--bgmd);
   position: relative;
   overflow: hidden;
@@ -10,6 +10,16 @@
   bottom: 0;
   left: 0;
   height: 100%;
+}
+
+.herotext {
+  max-width: 1060px;
+  height: 100%;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .herotitle {
