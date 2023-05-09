@@ -1,12 +1,14 @@
 import groq from "groq"
 import client from "../client"
 import BlogPost from "@/components/BlogPost"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import PostList from "@/components/PostList"
 import Pagination from "@/components/Pagination"
 import Hero from "@/components/Hero"
 
-const Home = ({ featuredPost, posts } : { featuredPost:any, posts:any }) => {
+const Home = (
+  { featuredPost, posts } : { featuredPost:any, posts:any }
+  ) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage, setPostsPerPage] = useState(6)
 

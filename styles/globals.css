@@ -20,3 +20,7 @@
 
   scroll-behavior: smooth;
 }
+
+body {
+  background-color: var(--bglight1);
+}

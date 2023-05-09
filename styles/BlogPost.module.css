@@ -1,0 +1,59 @@
+.postsection {
+  display: flex;
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.sectiontitle > h1 {
+  transform: rotate(-90deg) translateX(-50%);
+  text-transform: uppercase;
+
+  font-family: var(--inter);
+  color: var(--bgmd);
+}
+
+.postcontent {
+  border-left: 3px solid var(--bgmd);
+  padding: 0 50px;
+}
+
+.title {
+  text-transform: capitalize;
+  font-family: var(--inter);
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: var(--bgdark);
+}
+
+.postinfo {
+  color: var(--bgmd);
+  font-family: var(--inter);
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.date {
+  margin-bottom: 10px;
+}
+
+.author {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+.authorimgcont {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.authorimg {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
