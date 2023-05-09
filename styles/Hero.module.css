@@ -18,17 +18,51 @@
   margin: auto;
 
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+
+  z-index: 10;
 }
 
 .herotitle {
-  z-index: 10;
   position: relative;
   font-family: var(--inter);
-  font-weight: 600;
-  font-size: 36px;
+  font-weight: 800;
+  font-size: 70px;
   text-transform: capitalize;
   color: var(--white);
   text-align: right;
+}
+
+.featuredlink {
+  padding-top: 20px;
+  line-height: 10px;
+  position: relative;
+
+  font-family: var(--inter);
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.featuredlink::after {
+  content: "";
+  width: 90%;
+  height: 2px;
+  background-color: var(--accent);
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.featuredlink:hover::after {
+  opacity: 1;
+}
+
+.arrow {
+  transform: scaleX(-1) translateY(50%);
+  stroke-width: 1px;
 }
