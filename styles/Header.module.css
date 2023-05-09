@@ -29,6 +29,12 @@
   font-size: 18px;
   text-transform: uppercase;
   color: var(--white);
+
+  transition: all 0.2s ease-in-out;
+}
+
+.navlink:hover {
+  color: var(--accent);
 }
 
 .navbutton {
@@ -41,5 +47,11 @@
   background-color: var(--accent);
   border-radius: 5px;
   padding: 5px 15px;
+
+  transition: all 0.2s ease-in-out;
 }
 
+.navbutton:hover {
+  background-color: var(--bgdark);
+  color: var(--accent);
+}
