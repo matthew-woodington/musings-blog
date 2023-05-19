@@ -57,3 +57,12 @@
   object-fit: cover;
   object-position: center;
 }
+
+.ptag {
+  color: var(--bgdark);
+  font-family: var(--inter);
+  font-size: 18px;
+  font-weight: 300;
+
+  margin-bottom: 20px;
+}

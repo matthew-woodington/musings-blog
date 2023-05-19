@@ -40,17 +40,23 @@ return(
               <span>{post.name}</span>
             </div>
           </div>
-          <PortableText 
-            value={post.body[0]}
-          />
+            <div className={styles.ptag}>
+              <PortableText 
+                value={post.body[0]}
+              />
+            </div>
           {post.mainImage && (
             <picture>
               <img src={urlFor(post.mainImage).width(320).url()} alt={`${post.title} picture`} />
             </picture>
           )}
-          <PortableText 
-            value={post.body.slice(1)}
-          />
+          {post.body.slice(1).map((paragraph:any) => (
+            <div className={styles.ptag}>
+              <PortableText 
+                value={paragraph}
+              />
+            </div>
+          ))}
         </article>
       </section>
     )}
