@@ -46,9 +46,11 @@ return(
               />
             </div>
           {post.mainImage && (
-            <picture>
-              <img src={urlFor(post.mainImage).width(320).url()} alt={`${post.title} picture`} />
-            </picture>
+            <div className={styles.mainimgcont}>
+              <picture>
+                <img className={styles.mainimg} src={urlFor(post.mainImage).url()} alt={`${post.title} picture`} />
+              </picture>
+            </div>
           )}
           {post.body.slice(1).map((paragraph:any) => (
             <div className={styles.ptag}>

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import PostList from "@/components/PostList"
 import Pagination from "@/components/Pagination"
 import Hero from "@/components/Hero"
+import About from "@/components/About"
 
 const Home = (
   { featuredPost, posts } : { featuredPost:any, posts:any }
@@ -29,7 +30,10 @@ const Home = (
         <BlogPost post={featuredPost} />
       </section>
 
+      <About />
+
       <PostList currentPosts={currentPosts} />
+      
       <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
       
     </>

@@ -64,5 +64,17 @@
   font-size: 18px;
   font-weight: 300;
 
-  margin-bottom: 20px;
+  margin: 20px 0;
+}
+
+.mainimgcont {
+  width: 500px;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.mainimg {
+  object-fit: cover;
+  width: 100%;
+  object-position: center;
 }

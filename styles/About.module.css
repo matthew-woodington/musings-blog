@@ -1,0 +1,35 @@
+.aboutsection {
+  width: 100%;
+  background-color: var(--bglight2);
+  margin: 100px 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.about {
+  max-width: 850px;
+  padding: 60px 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  font-family: var(--inter);
+  font-weight: 600;
+  font-size: 30px;
+  text-transform: capitalize;
+  max-width: 400px;
+  color: var(--bgdark);
+}
+
+.body {
+  color: var(--bgdark);
+  font-family: var(--inter);
+  font-size: 18px;
+  font-weight: 300;
+
+  margin: 20px 0;
+}
