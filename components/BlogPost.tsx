@@ -53,7 +53,7 @@ return(
             </div>
           )}
           {post.body.slice(1).map((paragraph:any) => (
-            <div className={styles.ptag}>
+            <div key={paragraph._key} className={styles.ptag}>
               <PortableText 
                 value={paragraph}
               />

@@ -6,12 +6,26 @@
   padding-top: 100px;
 }
 
+.sectiontitle {
+  position: relative;
+  min-width: 100px;
+  min-height: 100%;
+}
+
 .sectiontitle > h1 {
   transform: rotate(-90deg) translateX(-50%);
   text-transform: uppercase;
 
   font-family: var(--inter);
   color: var(--bgmd);
+  font-size: 20px;
+  font-weight: 600;
+  width: 100px;
+  
+  position: absolute;
+  top: 0;
+
+  text-align: right;
 }
 
 .postcontent {

@@ -49,7 +49,7 @@ const featuredQuery = groq`*[_type == "post" && 'Featured' in categories[]->titl
   "publishedAt": publishedAt,
   body
 }`
-const postsQuery = groq`*[_type == "post" && publishedAt < now() && 'Standard' in categories[]->title] | order(publishedAt desc)`
+const postsQuery = groq`*[_type == "post" && publishedAt < now() && 'Post' in categories[]->title] | order(publishedAt desc)`
 
 export async function getStaticProps() {
   const featuredPost = await client.fetch(featuredQuery)

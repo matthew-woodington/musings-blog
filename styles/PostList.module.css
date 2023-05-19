@@ -1,0 +1,74 @@
+.postlist {
+  width: 100%;
+}
+
+.cont {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.listcont {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax(250px, 1fr) );
+  gap: 15px;
+}
+
+.listitem {
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  min-height: 300px;
+
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: var(--inter);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--bgdark);
+}
+
+.title:hover {
+  color: var(--bgmd);
+}
+
+.date {
+  font-family: var(--inter);
+  font-weight: 300;
+  font-size: 12px;
+  color: var(--bgmd);
+  margin-bottom: 10px;
+}
+
+.preview {
+  font-family: var(--inter);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--bgdark);
+  margin-bottom: 20px;
+}
+
+.linkbtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--inter);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--bgdark);
+}
+
+.linkbtn:hover {
+  color: var(--bgmd);
+}
+
+.arrow {
+  stroke-width: 0.5px;
+  font-size: 15px;
+}
