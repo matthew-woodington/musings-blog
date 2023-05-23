@@ -81,10 +81,15 @@
   margin: 20px 0;
 }
 
+.ptag:last-child {
+  margin-bottom: 0;
+}
+
 .mainimgcont {
   width: 500px;
   aspect-ratio: 3 / 2;
   overflow: hidden;
+  margin: 40px 0;
 }
 
 .mainimg {

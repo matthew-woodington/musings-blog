@@ -3,13 +3,14 @@ import styles from '../styles/PostList.module.css'
 import imageUrlBuilder from "@sanity/image-url"
 import client from "../client"
 import { BsArrowUpRight } from 'react-icons/bs'
+import Pagination from "./Pagination"
 
 
 function urlFor (source:any) {
   return imageUrlBuilder(client).image(source)
 }
 
-function PostList({ currentPosts } : { currentPosts:any }) {
+function PostList({ currentPosts, postsPerPage, totalPosts, paginate, currentPage } : { currentPosts:any, postsPerPage:number, totalPosts:number, paginate:any, currentPage:number }) {
 
   const sliceParagraph = (text:any) => {
     const preview = (text.children[0].text.slice(0,200))
@@ -25,9 +26,12 @@ function PostList({ currentPosts } : { currentPosts:any }) {
 
   console.log(currentPosts)
 
+  console.log(currentPosts)
+
   return (
     <section id="postlist" className={styles.postlist}>
       <div className={styles.cont}>
+        <h1 className={styles.head}>Blog Posts <div className={styles.line}></div></h1>
         <ul className={styles.listcont}>
           {currentPosts.length > 0 && currentPosts.map(
             (post:any) =>
@@ -47,6 +51,7 @@ function PostList({ currentPosts } : { currentPosts:any }) {
             )
           )}
         </ul>
+        <Pagination postsPerPage={postsPerPage} totalPosts={totalPosts} paginate={paginate} currentPage={currentPage} />
       </div>
     </section>
   )

@@ -32,9 +32,9 @@ const Home = (
 
       <About />
 
-      <PostList currentPosts={currentPosts} />
+      <PostList currentPosts={currentPosts} postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} currentPage={currentPage} />
       
-      <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
+      {/* <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} /> */}
       
     </>
   )

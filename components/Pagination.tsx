@@ -1,4 +1,6 @@
-function Pagination({ postsPerPage, totalPosts, paginate } : { postsPerPage:number, totalPosts:number, paginate:any }) {
+import styles from '../styles/Pagination.module.css'
+
+function Pagination({ postsPerPage, totalPosts, paginate, currentPage } : { postsPerPage:number, totalPosts:number, paginate:any, currentPage:number }) {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts/postsPerPage); i++) {
@@ -6,11 +8,11 @@ function Pagination({ postsPerPage, totalPosts, paginate } : { postsPerPage:numb
   }
 
   return (
-    <div>
-      <ul>
+    <div className={styles.pagination}>
+      <ul className={styles.pagelist}>
         {pageNumbers.map(number => (
-          <li key={number}>
-            <a onClick={(e) => paginate(e, number)} href="#" >{number}</a>
+          <li key={number} id='pageitem' className={currentPage == number ? `${styles.pageitem} ${styles.active}` : styles.pageitem}>
+            <a className={styles.button} onClick={(e) => paginate(e, number)} href="#" >{number}</a>
           </li>
         ))}
       </ul>
