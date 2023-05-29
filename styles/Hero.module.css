@@ -66,3 +66,45 @@
   transform: scaleX(-1) translateY(50%);
   stroke-width: 1px;
 }
+
+@media (max-width: 1060px) {
+  .herotext {
+    margin: 50px;
+  }
+
+  .herotitle {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .herotext {
+    margin: 30px;
+  }
+
+  .heroimg {
+    left: -40px;
+  }
+
+  .herotitle {
+    font-size: 45px;
+  }
+
+  .featuredlink {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .herotext {
+    margin: 20px;
+  }
+
+  .heroimg {
+    left: -80px;
+  }
+
+  .herotitle {
+    font-size: 32px;
+  }
+}
