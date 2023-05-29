@@ -100,3 +100,21 @@
   stroke-width: 0.5px;
   font-size: 15px;
 }
+
+@media (max-width: 1060px) {
+  .cont {
+    margin: 0 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cont {
+    margin: 0 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cont {
+    margin: 0 20px;
+  }
+}

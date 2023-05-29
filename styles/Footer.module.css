@@ -29,3 +29,38 @@
   font-weight: 200;
   color: var(--white);
 }
+
+@media (max-width: 1060px) {
+  .footer {
+    padding: 20px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 30px;
+    flex-direction: column;
+  }
+
+  .closersection {
+    margin-top: 20px;
+  }
+
+  .footertitle {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 20px;
+  }
+
+  .closersection {
+    margin-top: 20px;
+  }
+
+  .footertitle {
+    font-size: 25px;
+  }
+}
