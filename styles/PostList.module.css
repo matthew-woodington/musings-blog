@@ -59,6 +59,7 @@
   font-weight: 600;
   font-size: 20px;
   color: var(--bgdark);
+  text-transform: capitalize;
 }
 
 .title:hover {

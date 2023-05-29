@@ -4,6 +4,8 @@
   display: flex;
   justify-content: space-between;
   padding: 20px 100px;
+
+  position: relative;
 }
 
 .headertitle {
@@ -54,4 +56,111 @@
 .navbutton:hover {
   background-color: var(--bgdark);
   color: var(--accent);
+}
+
+.menubtn {
+  width: 30px;
+  height: 25px;
+  position: relative;
+  z-index: 60;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.menubtn > span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  background-color: var(--white);
+  transition: all .25s ease-in-out;
+}
+
+.menubtn > span:nth-child(1) {
+  top: 0%;
+}
+
+.menubtn > span:nth-child(2) {
+  top: 50%;
+}
+
+.menubtn > span:nth-child(3) {
+  top: 100%;
+}
+
+.menubtn.open > span:nth-child(1) {
+  top: 50%;
+  transform: rotate(135deg);
+}
+
+.menubtn.open > span:nth-child(2) {
+  top: 50%;
+  opacity: 0;
+}
+
+.menubtn.open > span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-135deg);
+}
+
+.mobilenav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bgmd);
+  z-index: 50;
+
+  transform: translateY(-100%);
+
+  transition: all 0.3s ease-in-out;
+}
+
+.mobilenav.active {
+  transform: translateY(0);
+}
+
+.mobilenavlist {
+  width: 100%;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobilenavlist > .navitem {
+  margin-bottom: 20px;
+}
+
+
+@media (max-width: 1060px) {
+  .header {
+    padding: 20px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 30px;
+  }
+
+  .headertitle {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 20px 20px;
+  }
+
+  .headertitle {
+    font-size: 25px;
+  }
 }

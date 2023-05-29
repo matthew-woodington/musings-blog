@@ -27,3 +27,7 @@
 body {
   background-color: var(--bglight1);
 }
+
+.fixed {
+  overflow: hidden;
+}

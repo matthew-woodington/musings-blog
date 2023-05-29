@@ -12,7 +12,7 @@ function Pagination({ postsPerPage, totalPosts, paginate, currentPage } : { post
       <ul className={styles.pagelist}>
         {pageNumbers.map(number => (
           <li key={number} id='pageitem' className={currentPage == number ? `${styles.pageitem} ${styles.active}` : styles.pageitem}>
-            <a className={styles.button} onClick={(e) => paginate(e, number)} href="#" >{number}</a>
+            <a className={styles.button} onClick={(e) => paginate(e, number)} href="/#postlist" >{number}</a>
           </li>
         ))}
       </ul>

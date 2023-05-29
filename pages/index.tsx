@@ -18,7 +18,7 @@ const Home = (
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
   const paginate = (e:any, pageNumber:number) => {
-    e.preventDefault()
+    // e.preventDefault()
     setCurrentPage(pageNumber)
   };
 
