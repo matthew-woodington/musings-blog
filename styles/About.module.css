@@ -41,10 +41,17 @@
 }
 
 @media (max-width: 768px) {
-  
+
 }
 
 @media (max-width: 480px) {
+  .aboutsection {
+    padding: 0 30px;
+  }
+
+  .header {
+    font-size: 25px;
+  }
 
   .body {
     font-size: 15px;
