@@ -22,7 +22,7 @@ function PostList({ currentPosts, postsPerPage, totalPosts, paginate, currentPag
     year: "numeric",
     month: "long",
     day: "numeric",
-  };
+  } as const;
 
   console.log(currentPosts)
 

@@ -117,4 +117,8 @@
   .cont {
     margin: 0 20px;
   }
+
+  .head {
+    font-size: 25px;
+  }
 }

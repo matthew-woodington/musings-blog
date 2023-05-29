@@ -15,7 +15,7 @@ const BlogPost = ({ post } : { post:any }) => {
     year: "numeric",
     month: "long",
     day: "numeric",
-  };
+  } as const;
 
 return(
   <>
