@@ -52,6 +52,7 @@ export async function getStaticPaths() {
   return {
     paths: paths.map((slug : any) => ({params: {slug}})),
     fallback: true,
+    revalidate: 1,
   }
 }
 
@@ -62,7 +63,8 @@ export async function getStaticProps(context:any) {
   return {
     props: {
       post
-    }
+    },
+    revalidate: 1,
   }
  }
 
