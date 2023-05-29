@@ -97,3 +97,56 @@
   width: 100%;
   object-position: center;
 }
+
+@media (max-width: 1060px) {
+  .postsection {
+    margin: 0 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .postsection {
+    display: block;
+  }
+
+  .sectiontitle {
+    display: none;
+  }
+
+  .postcontent {
+    border-left: none;
+    padding: 0;
+  }
+
+  .mainimgcont {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .postsection {
+    display: block;
+    margin: 0 30px;
+  }
+
+  .mainimgcont {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .postinfo {
+    font-size: 12px;
+  }
+
+  .authorimgcont {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ptag {
+    font-size: 15px;
+  }
+}
