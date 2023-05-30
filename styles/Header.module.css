@@ -47,15 +47,15 @@
   color: var(--bgdark);
 
   background-color: var(--accent);
+  border: 2px solid var(--accent);
   border-radius: 5px;
-  padding: 5px 15px;
+  padding: 3px 13px;
 
   transition: all 0.2s ease-in-out;
 }
 
 .navbutton:hover {
-  background-color: var(--bgdark);
-  color: var(--accent);
+  border: 2px solid var(--bgdark);
 }
 
 .menubtn {

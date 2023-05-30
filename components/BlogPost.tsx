@@ -1,7 +1,10 @@
 import { PortableText } from "@portabletext/react"
 import imageUrlBuilder from "@sanity/image-url"
 import client from "../client"
+import { useEffect, useState } from 'react'
 import styles from '../styles/BlogPost.module.css'
+import { BsArrowBarLeft } from 'react-icons/bs'
+import { useRouter } from 'next/router'
 
 
 function urlFor (source:any) {
@@ -9,6 +12,16 @@ function urlFor (source:any) {
 }
 
 const BlogPost = ({ post } : { post:any }) => {
+  const [postPage, setPostPage] = useState(false)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.pathname.includes('/post')) {
+      setPostPage(true)
+    } else {
+      setPostPage(false)
+    }
+  }, [])
 
   const options = {
     weekday: "long",
@@ -19,6 +32,11 @@ const BlogPost = ({ post } : { post:any }) => {
 
 return(
   <>
+    {postPage && (
+      <div className={styles.backbtn}>
+        <a href="/#postlist" className={styles.navbutton}><BsArrowBarLeft className={styles.arrow} />Back</a>
+      </div>
+    )}
     {post && (
       <section className={styles.postsection} >
         <div className={styles.sectiontitle} >
