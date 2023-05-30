@@ -38,7 +38,7 @@ return(
       </div>
     )}
     {post && (
-      <section className={styles.postsection} >
+      <section className={postPage ? styles.postsection : `${styles.postsection} ${styles.padding}`} >
         <div className={styles.sectiontitle} >
           <h1>{post.categories[0]}</h1>
         </div>

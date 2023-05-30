@@ -5,6 +5,10 @@
   margin: auto;
 }
 
+.postsection.padding {
+  padding-top: 100px;
+}
+
 .sectiontitle {
   position: relative;
   min-width: 100px;
