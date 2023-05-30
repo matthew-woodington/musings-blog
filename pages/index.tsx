@@ -1,9 +1,8 @@
 import groq from "groq"
 import client from "../client"
 import BlogPost from "@/components/BlogPost"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import PostList from "@/components/PostList"
-import Pagination from "@/components/Pagination"
 import Hero from "@/components/Hero"
 import About from "@/components/About"
 
@@ -18,24 +17,17 @@ const Home = (
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
   const paginate = (e:any, pageNumber:number) => {
-    // e.preventDefault()
     setCurrentPage(pageNumber)
   };
 
   return (
     <>
       <Hero />
-
       <section id="featured">
         <BlogPost post={featuredPost} />
       </section>
-
       <About />
-
-      <PostList currentPosts={currentPosts} postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} currentPage={currentPage} />
-      
-      {/* <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} /> */}
-      
+      <PostList currentPosts={currentPosts} postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} currentPage={currentPage} />      
     </>
   )
 }

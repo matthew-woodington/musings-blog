@@ -24,10 +24,6 @@ function PostList({ currentPosts, postsPerPage, totalPosts, paginate, currentPag
     day: "numeric",
   } as const;
 
-  console.log(currentPosts)
-
-  console.log(currentPosts)
-
   return (
     <section id="postlist" className={styles.postlist}>
       <div className={styles.cont}>
