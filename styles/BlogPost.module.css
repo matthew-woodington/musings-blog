@@ -152,6 +152,10 @@
     display: block;
   }
 
+  .postsection.padding {
+    padding-top: 80px;
+  }
+
   .sectiontitle {
     display: none;
   }
@@ -169,6 +173,10 @@
 @media (max-width: 480px) {
   .postsection {
     margin: 0 30px;
+  }
+
+  .postsection.padding {
+    padding-top: 60px;
   }
 
   .backbtn {
